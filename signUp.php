@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -34,10 +35,10 @@
 
 
 <?php
-if(!empty($_GET["message"])){ ?>
+if(!empty($_GET["messageS"])){ ?>
 
     <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <strong><?= $_GET["message"] ?></strong>
+        <strong><?= $_GET["messageS"] ?></strong>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 <?php } ?>
@@ -45,7 +46,7 @@ if(!empty($_GET["message"])){ ?>
 
 <div class="container">
 
-    <form action="verification.php" method="post" class="form form-control">
+    <form action="verificationSignUp.php" method="post" class="form form-control">
 
         <div class="mb-3">
             <label for="exampleFormControlInput1" class="form-label">Email address</label>
@@ -62,14 +63,10 @@ if(!empty($_GET["message"])){ ?>
         </div>
 
         <div class="col-auto">
-            <button type="submit" class="btn btn-primary mb-3">Connect</button>
+            <button type="submit" class="btn btn-primary mb-3">Create</button>
         </div>
-        <a href="signUp.php">You dont have an account ?</a>
+
 
     </form>
 
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</body>
-</html>

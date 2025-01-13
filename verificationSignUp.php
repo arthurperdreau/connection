@@ -1,14 +1,14 @@
 <?php
 //php et redirections (header) uniquement
-function redirect($message, $page =null)
+function redirect($messageS, $page =null)
 {
 
-    $url = "index.php";
+    $url = "signUp.php";
     if($page)
     {
         $url = "articles.php";
     }
-    header("Location: $url?message=$message");
+    header("Location: $url?messageS=$messageS");
     exit;
 }
 
@@ -25,19 +25,21 @@ $users = [
 if(empty($_POST['userName']) || empty($_POST['password'])) {
     redirect("formulaire  mal rempli");
 }
-
+if(preg_match('/[^a-zA-Z0-9]/', $_POST['userName'])) {
+    redirect("votre pseudo ne peut contenir que des lettres.");
+}
 $username = $_POST["userName"];
 $unEcryptedPassword = $_POST["password"];
 $hashedPassword = md5($unEcryptedPassword);
 
 //utilisateur inconnu
-if(!isset($users[$username])){
-    redirect("utilisateur inconnu");
+if(isset($users[$username])){
+    redirect("pseudo déjà utilisé");
 }
 
 
-if($users[$username] != $hashedPassword){
-    redirect("mauvais mot de passe");
+if(strlen($unEcryptedPassword) < 6){
+    redirect("Votre mot de passe doit au moins contenir 6 caractères.");
 }
 
 redirect("bienvenue, bien connecté","articles.php");
