@@ -64,7 +64,7 @@ if(!empty($_GET["message"])){ ?>
         <div class="col-auto">
             <button type="submit" class="btn btn-primary mb-3">Connect</button>
         </div>
-        <a href="signUp.php">You dont have an account ?</a>
+
 
     </form>
 

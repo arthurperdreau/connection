@@ -64,7 +64,7 @@ $articles = [
             <div class="card-body">
                 <h5 class="card-title"><?= $article['title'] ?></h5>
                 <p class="card-text"><?= $article['content'] ?></p>
-                <a href="unArticle.php?id=<?= $article['id'] ?>" id="<?= $article['id'] ?>" class="btn btn-primary">Lire l'aritcle</a>
+                <a href="unArticle.php?id=<?=$article['id'] ?>" class="btn btn-primary">Lire l'aritcle</a>
             </div>
         </div>
     <?php } ?>
